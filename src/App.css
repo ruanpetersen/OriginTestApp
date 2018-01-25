@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-image: url(backgroundTeam.jpg);
+  color: white;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.top{
+  border: 2px solid white;
+  color: white;
+  display: block;
+  padding: 0px;
+  text-align: left;
+}
+.mid{
+  border: 2px solid white;
+  /* color: gold; */
+  display: block;
+  padding: 0px;
+  text-align: center;
+}
+.bot{
+  border: 2px solid white;
+  display: block;
+  padding: 0px;
+  text-align: right;
+}
+.OmegaTeamMembers{
+  display: block;
+  padding: 0px;
+  text-align: center;
+}
+.AvailableTeamDiv{
+  text-align: center;
+  padding-bottom: 5px;
+}
+.AlphaTeamBench{
+  float: left;
+  padding-left: 25px;
+  text-align: center;
+  color: gold;
+}
+.OmegaTeamBench{
+  float: right;
+  padding-right: 25px;
+  text-align: center;
+  color: brown;
+}
+button{
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  background: white;
+}
+.kickBtn{
+  background: red;
+  color: white;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 3px;
+}
+h1{
+  margin: 5px;
+}
+.OmegaH3{
+  color: brown;
+}
+.AlphaH3{
+  color: gold;
+}
+.UniH3{
+  margin: 0;
+  padding: 10px;
+}
