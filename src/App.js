@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-
-const green = '#39D1B4';
-const yellow = '#FFD712';
+import bomb from './bomb.svg';
+import crosshair from './crosshair.svg';
+import gun from './gun.svg';
+import kirpan from './kirpan.svg';
+import shield from './shield.svg';
+import bomb2 from './bomb2.svg';
+import crosshair2 from './crosshair2.svg';
+import gun2 from './gun2.svg';
+import kirpan2 from './kirpan2.svg';
+import shield2 from './shield2.svg';
+import kick from './kick.svg';
+import add from './add.svg';
 
 class App extends Component {
 
   constructor() {
     super();
 
-    let availableTeam = ['Benzo Walli', 'Rasha Loa', 'Tayshaun Dasmoto', 'Colmar Cumberbatch', 'Femi Billon', 'Ziya Erika', 'Siyabonga Nesta', 'Sylvain Natalie', 'Dipak Iunia', 'Danel Mio'];
+    let availableTeam = [<img src={bomb} alt="bomb"></img>, <img src={crosshair} alt="crosshair"></img>, <img src={gun} alt="gun"></img>, <img src={kirpan} alt="kirpan"></img>, <img src={shield} alt="shield"></img>, <img src={bomb2} alt="bomb2"></img>, <img src={crosshair2} alt="crosshair2"></img>, <img src={gun2} alt="gun2"></img>, <img src={kirpan2} alt="kirpan2"></img>, <img src={shield2} alt="shield2"></img>];
     let alphaTeam = [];
     let omegaTeam = [];
     let benchTeam = [];
@@ -148,37 +157,36 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h1>Extreme Paintball Line-up!</h1>
+        <h1></h1>
 
-        <div className="top">
+        <div className="stayLeft">
           <div className="AvailableTeamDiv">
             <h3>Available Team Members</h3>
-            {this.state.availableTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClick(player)}>{player}</button><button className="kickBtn" onClick={() => this.handleClickBench(player)}>Kick</button></div>)}
+            {this.state.availableTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClick(player)}>{player}</button><button className="kickBtn" onClick={() => this.handleClickBench(player)}><img src={kick} alt="kick"></img></button></div>)}
           </div>
         </div>
 
-        <div className="mid">
-          <div className="AlphaTeamMembers">
-            <h3 className="AlphaH3">Alpha Team Members</h3>
-            {this.state.alphaTeam.map((player, key) => <div key={key}><button>{player}</button><button className="kickBtn" onClick={() => this.handleClickAvailable(player)}>Kick</button></div>)}
-          </div>
+        <div className="stayMid">
+        <div className="AlphaTeamMembers">
+          <h3 className="AlphaH3">Alpha Team Members</h3>
+          {this.state.alphaTeam.map((player, key) => <div key={key}><button className="AlphaTeamBtn">{player}</button><button className="kickBtn" onClick={() => this.handleClickAvailable(player)}><img src={kick} alt="kick"></img></button></div>)}
+        </div>
+        <div className="AlphaTeamBench">
+          <h3 className="">Alpha Team Bench</h3>
+          {this.state.benchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickAvailableBench(player)}>{player}</button><button onClick={() => this.handleClickAvailableBench(player)} className="addBtn"><img src={add} alt="addBtn"></img></button></div>)}
+        </div>
+        </div>
+
+        <div className="stayRight">
           <div className="OmegaTeamMembers">
             <h3 className="OmegaH3">Omega Team Members</h3>
-            {this.state.omegaTeam.map((player, key) => <div key={key}><button>{player}</button><button className="kickBtn" onClick={() => this.handleClickOmegaBench(player)}>Kick</button></div>)}
-          </div>
-        </div>
-
-        <div  className="bot">
-          <div className="AlphaTeamBench">
-            <h3 className="UniH3">Alpha Team Bench</h3>
-            {this.state.benchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickAvailableBench(player)}>{player}</button></div>)}
+            {this.state.omegaTeam.map((player, key) => <div key={key}><button className="OmegaTeamBtn">{player}</button><button className="kickBtn" onClick={() => this.handleClickOmegaBench(player)}><img src={kick} alt="kick"></img></button></div>)}
           </div>
           <div className="OmegaTeamBench">
-            <h3 className="UniH3">Omega Team Bench</h3>
-            {this.state.omegaBenchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickOmega(player)}>{player}</button></div>)}
+            <h3 className="">Omega Team Bench</h3>
+            {this.state.omegaBenchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickOmega(player)}>{player}</button><button onClick={() => this.handleClickOmega(player)} className="addBtn"><img src={add} alt="addBtn"></img></button></div>)}
           </div>
         </div>
-
       </div>
     );
   }
