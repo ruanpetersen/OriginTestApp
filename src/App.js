@@ -38,7 +38,6 @@ class App extends Component {
     };
   }
 
-
   handleClick(player) {
     let newAlphaTeam = this.state.alphaTeam;
     let newBenchTeam = this.state.benchTeam;
@@ -154,7 +153,6 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div className="App">
 
@@ -174,14 +172,14 @@ class App extends Component {
         </div>
 
         <div className="stayMid">
-        <div className="AlphaTeamMembers">
-          <h3 className="AlphaH3">Alpha Team Members</h3>
-          {this.state.alphaTeam.map((player, key) => <div key={key}><button className="AlphaTeamBtn">{player}</button><button className="kickBtn" onClick={() => this.handleClickAvailable(player)}><img src={kick} alt="kick"></img></button></div>)}
-        </div>
-        <div className="AlphaTeamBench">
-          <h3 className="">Alpha Team Bench</h3>
-          {this.state.benchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickAvailableBench(player)}>{player}</button><button onClick={() => this.handleClickAvailableBench(player)} className="addBtn"><img src={add} alt="addBtn"></img></button></div>)}
-        </div>
+          <div className="AlphaTeamMembers">
+            <h3 className="AlphaH3">Alpha Team Members</h3>
+            {this.state.alphaTeam.map((player, key) => <div key={key}><button className="AlphaTeamBtn">{player}</button><button className="kickBtn" onClick={() => this.handleClickAvailable(player)}><img src={kick} alt="kick"></img></button></div>)}
+          </div>
+          <div className="AlphaTeamBench">
+            <h3 className="">Alpha Team Bench</h3>
+            {this.state.benchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickAvailableBench(player)}>{player}</button><button onClick={() => this.handleClickAvailableBench(player)} className="addBtn"><img src={add} alt="addBtn"></img></button></div>)}
+          </div>
         </div>
 
         <div className="stayRight">
@@ -194,7 +192,6 @@ class App extends Component {
             {this.state.omegaBenchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickOmega(player)}>{player}</button><button onClick={() => this.handleClickOmega(player)} className="addBtn"><img src={add} alt="addBtn"></img></button></div>)}
           </div>
         </div>
-
       </div>
     );
   }
