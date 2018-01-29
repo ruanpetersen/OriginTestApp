@@ -6,12 +6,22 @@ body{
   background: black;
   color: white;
 }
+h1{
+  margin: 5px;
+  font-family: monospace;
+  background: black;
+  border-radius: 25px;
+  padding: 8px;
+  opacity: 0.5;
+}
 h3{
   background: black;
   padding: 10px;
   border-radius: 20px;
   text-align: center;
   display: -webkit-inline-box;
+  font-family: monospace;
+  opacity: .5;
 }
 #background-video{
   /* z-index: -1000; */
@@ -85,7 +95,7 @@ h3{
 }
 .OmegaTeamBench{
   text-align: center;
-  color: brown;
+  color: red;
 }
 button{
   padding: 5px;
@@ -109,17 +119,14 @@ button{
   padding: 5px;
   margin: 3px;
   color: black;
-  border: 2px solid brown;
+  border: 2px solid red;
 }
 .kickBtn{
   background: red;
   color: white;
 }
-h1{
-  margin: 5px;
-}
 .OmegaH3{
-  color: brown;
+  color: red;
 }
 .AlphaH3{
   color: gold;
