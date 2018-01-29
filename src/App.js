@@ -12,6 +12,7 @@ import kirpan2 from './kirpan2.svg';
 import shield2 from './shield2.svg';
 import kick from './kick.svg';
 import add from './add.svg';
+import videoURL from './videoplayback.mp4';
 
 class App extends Component {
 
@@ -157,7 +158,11 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h1></h1>
+        <video id="background-video" loop autoPlay>
+          <source src={videoURL} type="video/mp4" />
+          <source src={videoURL} type="video/ogg" />
+          Your browser does not support the video tag.
+        </video>
 
         <div className="stayLeft">
           <div className="AvailableTeamDiv">
@@ -167,6 +172,7 @@ class App extends Component {
         </div>
 
         <div className="stayMid">
+        <h1>Airsoft Championships Selection</h1>
         <div className="AlphaTeamMembers">
           <h3 className="AlphaH3">Alpha Team Members</h3>
           {this.state.alphaTeam.map((player, key) => <div key={key}><button className="AlphaTeamBtn">{player}</button><button className="kickBtn" onClick={() => this.handleClickAvailable(player)}><img src={kick} alt="kick"></img></button></div>)}
@@ -187,6 +193,7 @@ class App extends Component {
             {this.state.omegaBenchTeam.map((player, key) => <div key={key}><button onClick={() => this.handleClickOmega(player)}>{player}</button><button onClick={() => this.handleClickOmega(player)} className="addBtn"><img src={add} alt="addBtn"></img></button></div>)}
           </div>
         </div>
+
       </div>
     );
   }
