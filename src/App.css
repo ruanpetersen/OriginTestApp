@@ -6,7 +6,13 @@ body{
   background: black;
   color: white;
 }
-
+h3{
+  background: black;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  display: -webkit-inline-box;
+}
 #background-video{
   /* z-index: -1000; */
   position: absolute;
