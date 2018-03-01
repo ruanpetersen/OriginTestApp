@@ -6,6 +6,18 @@ body{
   background: black;
   color: white;
 }
+
+.goldBtn{
+  background-color: gold;
+  color: black;
+}
+.redBtn{
+  background-color: red;
+  color: white;
+}
+.lockBtn:focus{
+  background-color: orange;
+}
 h1{
   margin: 5px;
   font-family: monospace;
@@ -28,7 +40,10 @@ h3{
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -130,4 +145,37 @@ button{
 }
 .AlphaH3{
   color: gold;
+}
+
+@media only screen and (max-width: 500px) {
+  .stayLeft{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+  }
+  .stayMid{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+  }
+  .stayRight{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+  }
+  #background-video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* width: 100%; */
+    min-height: 100%;
+    background-size: cover;
+    overflow: hidden;
+  }
 }
