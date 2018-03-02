@@ -24,15 +24,17 @@ class App extends Component {
      availableTeam : availableTeam,
      alphaTeam : [],
      omegaTeam : [],
+     benchTeam : [],
      isLocked : false,
-     key : null,
+     key : null
     }
 
     this.handleClickLock = this.handleClickLock.bind(this);
   }
 
-  handleClickLock = (key) => {
+  handleClickLock = (key, player) => {
     let teamToUpdate = this.state.availableTeam;
+
     this.setState({
       availableTeam: teamToUpdate.map((player, id)=>{
         if(id === key){
@@ -62,14 +64,18 @@ class App extends Component {
   }
 
   handleBothTeams(handleClickAlphaTeam, handleClickOmegaTeam){
-    this.handleClickAlphaTeam();
-    this.handleClickOmegaTeam();
+    let availableTeam = this.state.availableTeam;
+    if(availableTeam.length >= 10){
+      this.handleClickAlphaTeam();
+      this.handleClickOmegaTeam();
+    }
   }
 
-  handleClickAlphaTeam(){
+  handleClickAlphaTeam(key, player){
     let newAlphaTeam = this.state.alphaTeam;
     let availableTeam = this.state.availableTeam;
     let alphaTeam = this.state.alphaTeam;
+
     if(availableTeam.length >= 5){
       for (let i = 0; i < 5; i++) {
         const playerIndex = Math.floor(Math.random() * availableTeam.length);
@@ -86,6 +92,7 @@ class App extends Component {
     let availableTeam = this.state.availableTeam;
     let newOmegaTeam = this.state.omegaTeam;
     let omegaTeam = this.state.omegaTeam;
+
     if(availableTeam.length >= 5){
       for (let i = 0; i < 5; i++) {
         const playerIndex = Math.floor(Math.random() * availableTeam.length);
@@ -94,7 +101,7 @@ class App extends Component {
       }
     }
     this.setState({
-      omegaTeam : newOmegaTeam,
+      omegaTeam : newOmegaTeam
     });
   };
 
@@ -112,7 +119,7 @@ class App extends Component {
     }
     //setState to rerender the App component
     this.setState({
-      alphaTeam : newAlphaTeam,
+      alphaTeam : newAlphaTeam
     });
   }
 
@@ -130,7 +137,7 @@ class App extends Component {
     }
     //setState to rerender the App component
     this.setState({
-      OmegaTeam : newOmegaTeam,
+      OmegaTeam : newOmegaTeam
     });
   }
 
@@ -148,7 +155,7 @@ class App extends Component {
     }
     //setState to rerender the App component
     this.setState({
-      alphaTeam : newAlphaTeam,
+      alphaTeam : newAlphaTeam
     });
   }
 
@@ -166,7 +173,7 @@ class App extends Component {
     }
     //setState to rerender the App component
     this.setState({
-      omegaTeam : newOmegaTeam,
+      omegaTeam : newOmegaTeam
     });
   }
 
@@ -184,13 +191,15 @@ class App extends Component {
 
         <div className="stayLeft">
           <div className="AvailableTeamDiv">
-            <h3>Available Team Members</h3><br/>
-            <button onClick={() => this.handleClickAlphaTeam()}>Generate Alpha Team</button>
-            <button onClick={() => this.handleClickOmegaTeam()}>Generate Omega Team</button>
-            <button onClick={() => this.handleBothTeams()}>Generate Both Teams</button>
+            <h3 className="subH3">Available Team Members</h3>
+            <div className="btnGroup">
+              <button className="alphaTeamGen" onClick={() => this.handleClickAlphaTeam()}>Generate Alpha Team</button>
+              <button className="omegaTeamGen" onClick={() => this.handleClickOmegaTeam()}>Generate Omega Team</button>
+              <button className="bothTeamGen" onClick={() => this.handleBothTeams()}>Generate Both Teams</button>
+            </div>
             {this.state.availableTeam.map((player, key) => <div key={key}><button>{player}</button><br/>
             <button disabled={player.isLocked} className="goldBtn" onClick={() => this.handleClickToAlpha(player)}>Alpha</button>
-            <button disabled={player.isLocked} className="redBtn" onClick={() => this.handleClickToOmega(player)}>Omega</button><br/>
+            <button disabled={player.isLocked} className="redBtn" onClick={() => this.handleClickToOmega(player)}>Omega</button>
             <button className="lockBtn" onClick={() => this.handleClickLock(key)}>Lock</button>
             <button className="unLockBtn" onClick={() => this.handleClickUnlock(key)}>Unlock</button>
             </div>)}

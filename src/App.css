@@ -6,17 +6,40 @@ body{
   background: black;
   color: white;
 }
-
+button:disabled{
+  background-color: gray;
+  color: darkgray;
+}
 .goldBtn{
   background-color: gold;
-  color: black;
+  color: white;
+  border: 0;
+  width: 20%;
+  font-weight: 600;
 }
 .redBtn{
   background-color: red;
   color: white;
+  border: 0;
+  width: 20%;
+  font-weight: 600;
 }
 .lockBtn:focus{
   background-color: orange;
+}
+.lockBtn{
+  background-color: orange;
+  color: white;
+  border: 0;
+  width: 20%;
+  font-weight: 600;
+}
+.unLockBtn{
+  background-color: green;
+  color: white;
+  border: 0;
+  width: 20%;
+  font-weight: 600;
 }
 h1{
   margin: 5px;
@@ -44,6 +67,7 @@ h3{
   min-height: 100%;
   background-size: cover;
   overflow: hidden;
+  /* height: 100vh; */
 }
 
 .App-logo {
@@ -146,8 +170,72 @@ button{
 .AlphaH3{
   color: gold;
 }
+.subH3{
+  /* display: block; */
+  position: relative;
+}
+.alphaTeamGen{
+  width: 30%;
+  /* display: -webkit-box; */
+  background-color: gold;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.omegaTeamGen{
+  width: 30%;
+  /* display: -webkit-box; */
+  background-color: red;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.bothTeamGen{
+  width: 30%;
+  /* display: -webkit-box; */
+  background-color: green;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+}
 
 @media only screen and (max-width: 500px) {
+  .stayLeft{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+  }
+  .stayMid{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+  }
+  .stayRight{
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+  }
+  #background-video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* width: 100%; */
+    min-height: 100%;
+    background-size: cover;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 986px) {
   .stayLeft{
     position: relative;
     right: 0;
